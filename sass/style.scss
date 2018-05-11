@@ -1,0 +1,81 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+$main_font: 'Lato', sans-serif;
+$secondary_font: 'Slabo 27px', serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFCDCA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-family: $main-font;
+    font-size: 45px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #3D0300;
+    text-shadow: 2px 2px #4C8787;
+  }
+
+  div {
+    button {
+      width: 200px;
+      height: 50px;
+      font-family: $secondary_font;
+      font-size: 20px;
+      font-weight: 600;
+      color: #002525;
+      background-color: #90B6B6;
+      text-shadow: 2px 2px #E1837E;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 1s ease-in-out;
+          &:hover {
+            color: #90B6B6;
+            background-color: #002525;
+            text-shadow: none;
+          }
+    }
+  }
+
+  h2 {
+    @extend h1;
+    font-family: $main-font;
+    font-size: 35px;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style-type: none;
+    li {
+      font-family: $secondary_font;
+      font-size: 25px;
+      font-weight: 600px;
+      color: #3D0300;
+
+      }
+    }
+    .countries_list {
+      li {  font-size: 18px;
+        font-family: $main-font;
+        font-weight: 400;
+        color: #002525;
+        margin: 10px 0;
+      }
+        .countries_list-special {
+          font-family: $main-font;
+          font-size: 20px;
+          font-weight: 800;
+          color: #002525
+        }
+    }
+}
