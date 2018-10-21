@@ -5,6 +5,9 @@
 
 $main_font: 'Lato', sans-serif;
 $secondary_font: 'Slabo 27px', serif;
+$phone_portrait: "(max-width: 767px) and (orientation: portrait)";
+$phone_landscape: "(max-widht: 767px) and (orientation: landscape)";
+$tablet: "(min-width: 768px) and (max-width: 991px)";
 
 * {
   box-sizing: border-box;
@@ -18,6 +21,7 @@ body {
   align-items: center;
   overflow-x: hidden;
   overflow-y: auto;
+  height: auto;
   h1 {
     font-family: $main-font;
     font-size: 45px;
@@ -55,9 +59,24 @@ body {
       width: auto;
       height: 50px;
       color: #002525;
-      background-color: #FFAEAA;
-      text-shadow: 2px 2px #E1837E;
+      background-color: #FFF;
+      transition: 1s ease-in-out;
+    }
+    select {
+      font-family: $secondary_font;
+      font-size: 20px;
+      font-weight: 600;
+      width: auto;
+      height: 50px;
+      color: #002525;
+      background-color: #FFF;
+      margin-left: 5px;
       padding: 5px;
+      &:hover{
+        color: #FFF;
+        background-color: #002525;
+        padding: 5px;
+      }
     }
   }
   .country-name-flag {
@@ -96,6 +115,7 @@ body {
 
   ul {
     list-style-type: none;
+    height: auto;
     li {
       font-family: $secondary_font;
       font-size: 25px;

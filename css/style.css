@@ -16,6 +16,7 @@ body {
       align-items: center;
   overflow-x: hidden;
   overflow-y: auto;
+  height: auto;
 }
 
 body h1, body h2 {
@@ -59,8 +60,25 @@ body div input {
   width: auto;
   height: 50px;
   color: #002525;
-  background-color: #FFAEAA;
-  text-shadow: 2px 2px #E1837E;
+  background-color: #FFF;
+  transition: 1s ease-in-out;
+}
+
+body div select {
+  font-family: "Slabo 27px", serif;
+  font-size: 20px;
+  font-weight: 600;
+  width: auto;
+  height: 50px;
+  color: #002525;
+  background-color: #FFF;
+  margin-left: 5px;
+  padding: 5px;
+}
+
+body div select:hover {
+  color: #FFF;
+  background-color: #002525;
   padding: 5px;
 }
 
@@ -104,6 +122,7 @@ body .border {
 
 body ul {
   list-style-type: none;
+  height: auto;
 }
 
 body ul li {
