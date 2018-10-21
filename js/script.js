@@ -2,10 +2,14 @@
 //DEFINING VARIABLES
 
 var url = 'https://restcountries.eu/rest/v1/name/';
+var url2 = 'https://restcountries.eu/rest/v1/capital/';
+var url3 = 'https://restcountries.eu/rest/v1/currency/';
+var url4 = 'https://restcountries.eu/rest/v1/lang/';
+
 var countriesList = $('#countries');
 
 $("#search").click(searchCountries);
-$("#sort").click(sortCountriesList);
+$("#search_by").click(searchCountriesBy);
 
 // FUNCTION FOR SEARCHING COUNTRIES
 
@@ -16,6 +20,28 @@ function searchCountries() {
     }
     var urlCountry = url + countryName;
     $.getJSON(urlCountry, showCountriesList);
+}
+
+function searchCountriesBy() {
+    var countryCapital = $('#country-attribute').val();
+    var countryCurrency = $('#country-attribute').val();
+    var countryLanguage = $('#country-attribute').val();
+    if (!countryCapital.length || !countryCurrency.length || !countryLanguage.length) {
+      return;
+    }
+    $('#mySelectBox option').each(function() {
+    if($('#capital').is(':selected')) {
+      var urlCountry2 = url2 + countryCapital;
+      $.getJSON(urlCountry2, showCountriesList);
+    } else if ($('#currency').is(':selected')) {
+      var urlCountry3 = url3 + countryCurrency;
+      $.getJSON(urlCountry3, showCountriesList);
+    } else if($('#language').is(':selected')) {
+      var urlCountry4 = url4 + countryLanguage;
+      $.getJSON(urlCountry4, showCountriesList);
+    }
+  });
+
 }
 
 // FUNCTION FOR DISPLAYING COUNTRIES LIST
@@ -37,7 +63,7 @@ function showCountriesList(resp) {
           <li><span class="countries_list-special">Currency: </span>${item.currencies}</li>
           <li><span class="countries_list-special">Area: </span>${item.area}</li>
           <li><span class="countries_list-special">Population: </span>${item.population}</li>
-          <li><span class="countries_list-special">Languages: </span>${item.languages}</li>
+          <li><span class="countries_list-special">Language(s): </span>${item.languages}</li>
           <li><span class="countries_list-special">Region: </span>${item.region}</li>
         </ul>
         <div class="border"></div>
@@ -46,8 +72,6 @@ function showCountriesList(resp) {
       `;
 
       $('<li>').html(countryData).appendTo(countriesList);
-      $('.countries').hide("fast");
-      $('.countries').slideDown("slow");
 
 // CHANGING STYLES IN COUNTRIES LIST
 
@@ -63,15 +87,5 @@ function showCountriesList(resp) {
 
     });
 }
-
-function sortCountriesList(countryData) {
-  //countriesList.empty();
-    var sortedList = countryData.sort(function(a, b) {
-      return a.population > b.population;
-    });
-    console.log(sortedList);
-  $('<li>').html(sortedList).appendTo(countriesList);
-}
-
 searchCountries();
-sortCountriesList()
+searchCountriesBy();
