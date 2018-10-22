@@ -8,24 +8,42 @@
             <link rel="stylesheet" type="text/css" href="css/style.css">
         </head>
         <body>
-              <h1>Country search engine</h1>
-              <div>
-                  <button id="search">Search a country</button>
-                  <input id="country-name" type="text" placeholder="Enter a country name">
+              <div class="row">
+                  <div class="buttons col-xs-12 col-sm-4 col-md-5 col-lg-5 col-xl-6">
+                    <div class="row">
+                      <div class="col-xl-6">
+                        <img src="images/countries.jpg" alt="countries">
+                      </div>
+                      <div class="col-xl-6">
+                        <div class="button_search">
+                          <div>
+                            <h1>Country search engine</h1>
+                          </div>
+                          <button id="search">Search a country</button>
+                          <input id="country-name" type="text" placeholder="Enter a country name">
+                        </div>
+                        <div class="buttons_search-by">
+                            <button id="search_by">Search a country by:
+                            </button>
+                            <select id="mySelectBox">
+                              <option id="capital">Capital</option>
+                              <option id="currency">Currency</option>
+                              <option id="language">Language</option>
+                            </select>
+                          <input id="country-attribute" type="text" placeholder="Enter a value">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="display_list col-xs-12 col-sm-8 col-md-7 col-lg-7 col-xl-6">
+                    <div>
+                        <h2>List of countries</h2>
+                    </div>
+                      <ul id="countries">
+                          <li>No data</li>
+                      </ul>
+                  </div>
               </div>
-              <div>
-                  <button id="search_by">Search a country by:</button>
-                  <select id="mySelectBox">
-                    <option id="capital">Capital</option>
-                    <option id="currency">Currency</option>
-                    <option id="language">Language</option>
-                  </select>
-                  <input id="country-attribute" type="text">
-              </div>
-              <h2>List of countries</h2>
-              <ul id="countries">
-                  <li>No data</li>
-              </ul>
               <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
               <script type="text/javascript" src="js/script.js"></script>
         </body>
