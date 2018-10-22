@@ -9,10 +9,6 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   height: auto;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
   width: 100vw;
 }
 
@@ -23,6 +19,7 @@ body .row {
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
+  position: relative;
 }
 
 body .row:after {
@@ -32,6 +29,9 @@ body .row:after {
 }
 
 body .buttons {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -42,7 +42,7 @@ body .buttons {
       justify-content: flex-start;
 }
 
-body .buttons .button_search {
+body .buttons .button_search div {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -51,7 +51,16 @@ body .buttons .button_search {
       align-items: center;
 }
 
-body .buttons h1, body .buttons .display_list div h2, body .display_list div .buttons h2 {
+body .buttons .button_search div .buttons_logo {
+  margin: 25px auto;
+}
+
+body .buttons .button_title {
+  background-color: #809fff;
+  width: 100%;
+}
+
+body .buttons .button_title h1 {
   font-family: "Lato", sans-serif;
   font-size: 45px;
   font-weight: 800;
@@ -95,6 +104,7 @@ body .buttons input {
   transition: 1s ease-in-out;
   padding-left: 5px;
   margin: 10px;
+  background-color: #b3c6ff;
 }
 
 body .buttons select {
@@ -107,6 +117,7 @@ body .buttons select {
   background-color: #FFF;
   margin-left: 5px;
   margin: 10px;
+  background-color: #b3c6ff;
 }
 
 body .buttons select:hover {
@@ -133,23 +144,34 @@ body .display_list {
       align-items: center;
   -ms-flex-pack: start;
       justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-body .display_list div {
+body .display_list .display_list-title {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  background-color: #809fff;
+  z-index: 1;
 }
 
-body .display_list div h2 {
+body .display_list .display_list-title h2 {
+  color: #3D0300;
+  text-shadow: 2px 2px #4C8787;
   font-family: "Lato", sans-serif;
-  font-size: 35px;
+  font-size: 45px;
   font-weight: 600;
   margin: 25px 0;
-  text-align: center;
+  text-align: left;
 }
 
 body .display_list .border {
@@ -164,12 +186,15 @@ body .display_list .country-name-flag {
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
   width: 550px;
   margin: 25px 0 0 0;
   background-color: #ffffb3;
   border-top: 3.5px solid #000033;
   border-left: 3.5px solid #000033;
   border-right: 3.5px solid #000033;
+  height: 60px;
 }
 
 body .display_list .country-name-flag span {
@@ -186,11 +211,17 @@ body .display_list .country-name-flag h3 {
   padding: 6.5px;
 }
 
+body .display_list .country-name-flag .flag-icon {
+  margin: 0;
+  height: 50px;
+  width: 80px;
+}
+
 body .display_list ul#countries {
   list-style-type: none;
   height: auto;
   padding-left: 0;
-  margin: 0;
+  margin: 100px 25px 0 0;
 }
 
 body .display_list ul#countries li {
@@ -277,12 +308,51 @@ body .display_list .countries_list .countries_list-special {
         flex-direction: column;
     height: auto;
   }
-  body .buttons h1, body .buttons .display_list div h2, body .display_list div .buttons h2 {
+  body .buttons {
+    z-index: 1;
+    background: linear-gradient(to right, #fff, #FFCDCA);
+  }
+  body .buttons .button_title h1 {
     font-size: 25px;
     text-align: center;
+    margin: 5px auto;
+  }
+  body .buttons button {
+    margin: 5px;
+    height: 35px;
+    border-radius: 17.5px;
+    font-size: 16px;
+  }
+  body .buttons input {
+    margin: 5px;
+    height: 35px;
+    font-size: 16px;
+  }
+  body .buttons select {
+    margin: 5px;
+    height: 35px;
+    font-size: 16px;
+  }
+  body .buttons .button_search .buttons_logo {
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+  }
+  body .display_list {
+    top: 200px;
   }
   body .display_list .border {
     width: 100vw;
+  }
+  body .display_list .display_list-title {
+    top: 275px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+  }
+  body .display_list .display_list-title h2 {
+    font-size: 25px;
+    text-align: center;
   }
   body .display_list ul#countries {
     margin-bottom: 25px;
@@ -351,15 +421,44 @@ body .display_list .countries_list .countries_list-special {
         flex-direction: row;
     height: auto;
   }
-  body .buttons h1, body .buttons .display_list div h2, body .display_list div .buttons h2 {
-    font-size: 25px;
+  body .buttons .button_search div .buttons_logo {
+    display: block;
+    margin: 0 auto;
+    transform: scale(0.75);
+  }
+  body .buttons .button_title {
+    background-color: #809fff;
+    height: 80px;
+    border: none;
+  }
+  body .buttons .button_title h1 {
+    font-size: 24px;
     text-align: center;
+    margin: 10px auto 0 auto;
+    padding: 5px;
+  }
+  body .buttons button {
+    margin: 5px;
+  }
+  body .buttons input {
+    margin: 5px;
+  }
+  body .buttons select {
+    margin: 5px;
+  }
+  body .display_list .display_list-title {
+    width: 66.66%;
+    height: 80px;
+  }
+  body .display_list .display_list-title h2 {
+    font-size: 24px;
+    margin: 10px auto 0 auto;
   }
   body .display_list .border {
     width: 300px;
   }
   body .display_list ul#countries {
-    margin-bottom: 25px;
+    margin: 60px auto 25px auto;
   }
   body .display_list ul#countries li {
     font-size: 14px;
@@ -382,7 +481,8 @@ body .display_list .countries_list .countries_list-special {
 
 @media (min-width: 768px) and (max-width: 991px) {
   body {
-    width: 100%;
+    width: 100vw;
+    overflow-x: hidden;
   }
   body .col-md-1 {
     width: 8.33%;
@@ -425,15 +525,30 @@ body .display_list .countries_list .countries_list-special {
         flex-direction: row;
     height: auto;
   }
-  body .buttons h1, body .buttons .display_list div h2, body .display_list div .buttons h2 {
-    font-size: 25px;
+  body .buttons .button_search div .buttons_logo {
+    display: block;
+    margin: 25px auto 0 auto;
+    transform: scale(0.75);
+  }
+  body .buttons .button_title {
+    background-color: #809fff;
+  }
+  body .buttons .button_title h1 {
+    font-size: 22px;
     text-align: center;
+  }
+  body .display_list .display_list-title {
+    width: 58.33%;
+    margin: 0;
+  }
+  body .display_list .display_list-title h2 {
+    font-size: 22px;
   }
   body .display_list .border {
     width: 400px;
   }
   body .display_list ul#countries {
-    margin-bottom: 25px;
+    margin: 80px 5px 25px 0;
   }
   body .display_list ul#countries li {
     font-size: 16px;
@@ -455,6 +570,9 @@ body .display_list .countries_list .countries_list-special {
 }
 
 @media (min-width: 992px) and (max-width: 1279px) {
+  body {
+    overflow-x: auto;
+  }
   body .col-lg-1 {
     width: 8.33%;
   }
@@ -491,15 +609,31 @@ body .display_list .countries_list .countries_list-special {
   body .col-lg-12 {
     width: 100%;
   }
-  body .buttons h1, body .buttons .display_list div h2, body .display_list div .buttons h2 {
-    font-size: 35px;
+  body .buttons .button_title {
+    background-color: #809fff;
+    width: 100%;
+  }
+  body .buttons .button_title h1 {
+    font-size: 30px;
     text-align: center;
+  }
+  body .display_list {
+    -ms-flex-align: end;
+        align-items: flex-end;
   }
   body .display_list .border {
     width: 500px;
   }
+  body .display_list .display_list-title {
+    width: 58.34%;
+    background-color: #809fff;
+  }
+  body .display_list .display_list-title h2 {
+    font-size: 30px;
+    text-align: center;
+  }
   body .display_list ul#countries {
-    margin-bottom: 25px;
+    margin: 80px 5px 25px 0;
   }
   body .display_list ul#countries li {
     font-size: 20px;

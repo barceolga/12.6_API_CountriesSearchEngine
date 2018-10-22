@@ -28,8 +28,6 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   height: auto;
-  display: flex;
-  flex-direction: row;
   width: 100vw;
 
 .row {
@@ -38,28 +36,42 @@ body {
   @include clearfix;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
   .buttons {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     .button_search {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .buttons_logo {
+          margin: 25px auto;
+        }
+      }
     }
-    h1 {
-      font-family: $main-font;
-      font-size: 45px;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: #3D0300;
-      text-shadow: 2px 2px #4C8787;
-      margin: 25px auto;
-      text-align: center;
-    }
+   .button_title {
+     background-color: #809fff;
+     width: 100%;
+     h1 {
+       font-family: $main-font;
+       font-size: 45px;
+       font-weight: 800;
+       text-transform: uppercase;
+       color: #3D0300;
+       text-shadow: 2px 2px #4C8787;
+       margin: 25px auto;
+       text-align: center;
+     }
+   }
+
 
     button {
       width: 200px;
@@ -92,6 +104,7 @@ body {
       transition: 1s ease-in-out;
       padding-left: 5px;
       margin: 10px;
+      background-color: #b3c6ff;
     }
     select {
       font-family: $secondary_font;
@@ -103,6 +116,7 @@ body {
       background-color: #FFF;
       margin-left: 5px;
       margin: 10px;
+      background-color: #b3c6ff;
       &:hover{
         color: #FFF;
         background-color: #002525;
@@ -121,17 +135,27 @@ body {
    flex-direction: column;
    align-items: center;
    justify-content: flex-start;
-   div {
+   position: absolute;
+   top: 0;
+   right: 0;
+   .display_list-title {
       display: flex;
       justify-content: center;
       align-items: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 50%;
+      background-color: #809fff;
+      z-index: 1;
      h2 {
-       @extend h1;
+       color: #3D0300;
+       text-shadow: 2px 2px #4C8787;
        font-family: $main-font;
-       font-size: 35px;
+       font-size: 45px;
        font-weight: 600;
        margin: 25px 0;
-       text-align: center;
+       text-align: left;
      }
    }
    .border {
@@ -143,12 +167,14 @@ body {
    .country-name-flag {
      display: flex;
      flex-direction: row;
+     justify-content: flex-start;
      width: 550px;
      margin: 25px 0 0 0;
      background-color: #ffffb3;
      border-top: 3.5px solid #000033;
      border-left: 3.5px solid #000033;
      border-right: 3.5px solid #000033;
+     height: 60px;
      span {
        display: inline-block;
        margin: 0 6px;
@@ -161,13 +187,18 @@ body {
        margin: 0;
        padding: 6.5px;
      }
+     .flag-icon {
+       margin: 0;
+       height: 50px;
+       width: 80px;
+     }
    }
 
    ul#countries {
      list-style-type: none;
      height: auto;
      padding-left: 0;
-     margin: 0;
+     margin: 100px 25px 0 0;
      li {
        list-style-type: none;
        font-family: $secondary_font;
@@ -229,14 +260,54 @@ body {
       height: auto;
     }
     .buttons {
-      h1 {
-        font-size: 25px;
-        text-align: center;
+      z-index: 1;
+      background: linear-gradient(to right, #fff, #FFCDCA);
+      .button_title {
+        h1 {
+          font-size: 25px;
+          text-align: center;
+          margin: 5px auto;
+        }
+      }
+      button {
+        margin: 5px;
+        height: 35px;
+        border-radius: 17.5px;
+        font-size: 16px;
+      }
+      input {
+        margin: 5px;
+        height: 35px;
+        font-size: 16px;
+      }
+      select {
+        margin: 5px;
+        height: 35px;
+        font-size: 16px;
+      }
+      .button_search {
+
+        .buttons_logo {
+          display: block;
+          margin: 0 auto;
+          height: 50px;
+        }
       }
     }
     .display_list {
+       top: 200px;
       .border {
         width: 100vw;
+      }
+      .display_list-title {
+        top: 275px;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        h2 {
+          font-size: 25px;
+          text-align: center;
+        }
       }
 
       ul#countries {
@@ -288,18 +359,53 @@ body {
       height: auto;
     }
     .buttons {
-      h1 {
-        font-size: 25px;
-        text-align: center;
+      .button_search {
+       div {
+         .buttons_logo {
+           display: block;
+           margin: 0 auto;
+           transform: scale(0.75);
+         }
+       }
+      }
+      .button_title {
+        background-color: #809fff;
+        height: 80px;
+        border: none;
+        h1 {
+          font-size: 24px;
+          text-align: center;
+          margin: 10px auto 0 auto;
+          padding: 5px;
+        }
+      }
+      button {
+        margin: 5px;
+      }
+      input {
+        margin: 5px;
+      }
+      select {
+        margin: 5px;
       }
     }
     .display_list {
+
+      .display_list-title {
+        width: 66.66%;
+        height: 80px;
+        h2 {
+          font-size: 24px;
+          margin: 10px auto 0 auto;
+        }
+      }
       .border {
         width: 300px;
       }
 
       ul#countries {
-        margin-bottom: 25px;
+
+        margin: 60px auto 25px auto;
         li {
           font-size: 14px;
         }
@@ -326,7 +432,8 @@ body {
 @media #{$tablet} {
 
   body {
-    width: 100%;
+    width: 100vw;
+    overflow-x: hidden;
 
     .col-md-1 {width: 8.33%;}
     .col-md-2 {width: 16.66%;}
@@ -346,18 +453,38 @@ body {
       height: auto;
     }
     .buttons {
-      h1 {
-        font-size: 25px;
-        text-align: center;
+      .button_search {
+        div {
+          .buttons_logo {
+            display: block;
+            margin: 25px auto 0 auto;
+            transform: scale(0.75);
+          }
+        }
+
       }
-    }
+      .button_title {
+          background-color: #809fff;
+          h1 {
+            font-size: 22px;
+            text-align: center;
+          }
+        }
+      }
     .display_list {
+      .display_list-title {
+        width: 58.33%;
+        margin: 0;
+        h2 {
+          font-size: 22px;
+        }
+      }
       .border {
         width: 400px;
       }
 
       ul#countries {
-        margin-bottom: 25px;
+        margin: 80px 5px 25px 0;
         li {
           font-size: 16px;
         }
@@ -385,6 +512,7 @@ body {
 
 @media #{$desktop_small} {
   body {
+     overflow-x:  auto;
     .col-lg-1 {width: 8.33%;}
     .col-lg-2 {width: 16.66%;}
     .col-lg-3 {width: 25%;}
@@ -398,18 +526,30 @@ body {
     .col-lg-11 {width: 91.66%;}
     .col-lg-12 {width: 100%;}
     .buttons {
-      h1 {
-        font-size: 35px;
-        text-align: center;
+      .button_title {
+          background-color: #809fff;
+          width: 100%;
+          h1 {
+            font-size: 30px;
+            text-align: center;
+        }
       }
     }
     .display_list {
+      align-items: flex-end;
       .border {
         width: 500px;
       }
-
+      .display_list-title {
+        width: 58.34%;
+        background-color: #809fff;
+        h2 {
+          font-size: 30px;
+          text-align: center;
+        }
+      }
       ul#countries {
-        margin-bottom: 25px;
+        margin: 80px 5px 25px 0;
         li {
           font-size: 20px;
         }
