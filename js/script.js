@@ -8,21 +8,13 @@ var url4 = 'https://restcountries.eu/rest/v1/lang/';
 
 var countriesList = $('#countries');
 
-$("#search").click(searchCountries);
 $("#search_by").click(searchCountriesBy);
 
 // FUNCTION FOR SEARCHING COUNTRIES
 
-function searchCountries() {
-    var countryName = $('#country-name').val();
-    if (!countryName.length) {
-      countryName = "Spain";
-    }
-    var urlCountry = url + countryName;
-    $.getJSON(urlCountry, showCountriesList);
-}
 
 function searchCountriesBy() {
+    var countryName = $('#country-attribute').val();
     var countryCapital = $('#country-attribute').val();
     var countryCurrency = $('#country-attribute').val();
     var countryLanguage = $('#country-attribute').val();
@@ -30,12 +22,18 @@ function searchCountriesBy() {
       return;
     }
     $('#mySelectBox option').each(function() {
-    if($('#capital').is(':selected')) {
+    if($("#name").is(':selected')) {
+      if (!countryName.length) {
+        countryName = "Spain";
+      }
+      var urlCountry = url + countryName;
+      $.getJSON(urlCountry, showCountriesList);
+    } else if($('#capital').is(':selected')) {
       var urlCountry2 = url2 + countryCapital;
       $.getJSON(urlCountry2, showCountriesList);
     } else if ($('#currency').is(':selected')) {
-      if (countryCurrency.length > 3) {
-        alert ("Code is too long. Please enter up to 3 digit according to ISO 4217 Currency Codes.");
+      if (countryCurrency.length !== 3) {
+        alert ("Bad code. Please enter 3 digit's code according to ISO 4217 Currency Codes.");
         return;
       } else {
         var urlCountry3 = url3 + countryCurrency;
@@ -95,5 +93,4 @@ function showCountriesList(resp) {
 
     });
 }
-searchCountries();
 searchCountriesBy();
