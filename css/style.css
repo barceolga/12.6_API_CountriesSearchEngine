@@ -6,99 +6,179 @@
 
 body {
   background: linear-gradient(to right, #fff, #FFCDCA);
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  width: 100vw;
+}
+
+body .row {
+  width: 100%;
+  height: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+}
+
+body .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body .buttons {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  -ms-flex-pack: center;
-      justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: auto;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
 }
 
-body h1, body h2 {
+body .buttons .button_search {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+body .buttons h1, body .buttons .display_list div h2, body .display_list div .buttons h2 {
   font-family: "Lato", sans-serif;
   font-size: 45px;
   font-weight: 800;
   text-transform: uppercase;
   color: #3D0300;
   text-shadow: 2px 2px #4C8787;
+  margin: 25px auto;
+  text-align: center;
 }
 
-body div {
-  margin-bottom: 10px;
-}
-
-body div button {
+body .buttons button {
   width: 200px;
   height: 50px;
   font-family: "Slabo 27px", serif;
   font-size: 20px;
   font-weight: 600;
   color: #002525;
-  background-color: #90B6B6;
+  background-color: #809fff;
   text-shadow: 2px 2px #E1837E;
   border: none;
   border-radius: 25px;
+  margin: 10px;
   cursor: pointer;
   transition: 1s ease-in-out;
 }
 
-body div button:hover {
-  color: #90B6B6;
+body .buttons button:hover {
+  color: #809fff;
   background-color: #002525;
   text-shadow: none;
 }
 
-body div input {
+body .buttons input {
   font-family: "Slabo 27px", serif;
   font-size: 20px;
   font-weight: 600;
-  width: auto;
+  width: 200px;
   height: 50px;
   color: #002525;
   background-color: #FFF;
   transition: 1s ease-in-out;
+  padding-left: 5px;
+  margin: 10px;
 }
 
-body div select {
+body .buttons select {
   font-family: "Slabo 27px", serif;
   font-size: 20px;
   font-weight: 600;
-  width: auto;
+  width: 200px;
   height: 50px;
   color: #002525;
   background-color: #FFF;
   margin-left: 5px;
-  padding: 5px;
+  margin: 10px;
 }
 
-body div select:hover {
+body .buttons select:hover {
   color: #FFF;
   background-color: #002525;
   padding: 5px;
 }
 
-body .country-name-flag {
+body .buttons .buttons_search-by {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+body .display_list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+}
+
+body .display_list div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+body .display_list div h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  margin: 25px 0;
+  text-align: center;
+}
+
+body .display_list .border {
+  width: 550px;
+  height: 3.5px;
+  background-color: #000033;
+  margin: 0;
+}
+
+body .display_list .country-name-flag {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
   width: 550px;
   margin: 25px 0 0 0;
-  background-color: #D46F6A;
+  background-color: #ffffb3;
+  border-top: 3.5px solid #000033;
+  border-left: 3.5px solid #000033;
+  border-right: 3.5px solid #000033;
 }
 
-body .country-name-flag span {
+body .display_list .country-name-flag span {
   display: inline-block;
   margin: 0 6px;
   height: 50px;
 }
 
-body .country-name-flag h3 {
+body .display_list .country-name-flag h3 {
   display: inline-block;
   width: auto;
   height: 50px;
@@ -106,37 +186,27 @@ body .country-name-flag h3 {
   padding: 6.5px;
 }
 
-body h2 {
-  font-family: "Lato", sans-serif;
-  font-size: 35px;
-  font-weight: 600;
-  margin: 10px 0;
-}
-
-body .border {
-  width: 550px;
-  height: 3.5px;
-  background-color: navy;
+body .display_list ul#countries {
+  list-style-type: none;
+  height: auto;
+  padding-left: 0;
   margin: 0;
 }
 
-body ul {
+body .display_list ul#countries li {
   list-style-type: none;
-  height: auto;
-}
-
-body ul li {
   font-family: "Slabo 27px", serif;
   font-size: 25px;
   font-weight: 600px;
   color: #3D0300;
 }
 
-body .countries_list {
+body .display_list .countries_list {
   padding-left: 0;
+  list-style-type: none;
 }
 
-body .countries_list li {
+body .display_list .countries_list li {
   font-size: 18px;
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -148,9 +218,11 @@ body .countries_list li {
   height: 40px;
   padding: 6px;
   margin: 0;
+  border-left: 3.5px solid #000033;
+  border-right: 3.5px solid #000033;
 }
 
-body .countries_list .countries_list-special {
+body .display_list .countries_list .countries_list-special {
   display: inline-block;
   font-family: "Lato", sans-serif;
   font-size: 20px;
@@ -158,5 +230,332 @@ body .countries_list .countries_list-special {
   color: #002525;
   margin-right: 5px;
   width: 120px;
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  body {
+    overflow-y: auto;
+  }
+  body .col-xs-1 {
+    width: 8.33%;
+  }
+  body .col-xs-2 {
+    width: 16.66%;
+  }
+  body .col-xs-3 {
+    width: 25%;
+  }
+  body .col-xs-4 {
+    width: 33.33%;
+  }
+  body .col-xs-5 {
+    width: 41.66%;
+  }
+  body .col-xs-6 {
+    width: 50%;
+  }
+  body .col-xs-7 {
+    width: 58.33%;
+  }
+  body .col-xs-8 {
+    width: 66.66%;
+  }
+  body .col-xs-9 {
+    width: 75%;
+  }
+  body .col-xs-10 {
+    width: 83.33%;
+  }
+  body .col-xs-11 {
+    width: 91.66%;
+  }
+  body .col-xs-12 {
+    width: 100%;
+  }
+  body .row {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    height: auto;
+  }
+  body .buttons h1, body .buttons .display_list div h2, body .display_list div .buttons h2 {
+    font-size: 25px;
+    text-align: center;
+  }
+  body .display_list .border {
+    width: 100vw;
+  }
+  body .display_list ul#countries {
+    margin-bottom: 25px;
+  }
+  body .display_list ul#countries li {
+    font-size: 14px;
+  }
+  body .display_list .country-name-flag {
+    width: 100vw;
+  }
+  body .display_list .country-name-flag h3 {
+    padding: 16px;
+  }
+  body .display_list .countries_list li {
+    width: 100vw;
+    font-size: 14px;
+  }
+  body .display_list .countries_list .countries_list-special {
+    font-size: 16px;
+    width: 90px;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  body {
+    width: 100%;
+  }
+  body .col-sm-1 {
+    width: 8.33%;
+  }
+  body .col-sm-2 {
+    width: 16.66%;
+  }
+  body .col-sm-3 {
+    width: 25%;
+  }
+  body .col-sm-4 {
+    width: 33.33%;
+  }
+  body .col-sm-5 {
+    width: 41.66%;
+  }
+  body .col-sm-6 {
+    width: 50%;
+  }
+  body .col-sm-7 {
+    width: 58.33%;
+  }
+  body .col-sm-8 {
+    width: 66.66%;
+  }
+  body .col-sm-9 {
+    width: 75%;
+  }
+  body .col-sm-10 {
+    width: 83.33%;
+  }
+  body .col-sm-11 {
+    width: 91.66%;
+  }
+  body .col-sm-12 {
+    width: 100%;
+  }
+  body .row {
+    -ms-flex-direction: row;
+        flex-direction: row;
+    height: auto;
+  }
+  body .buttons h1, body .buttons .display_list div h2, body .display_list div .buttons h2 {
+    font-size: 25px;
+    text-align: center;
+  }
+  body .display_list .border {
+    width: 300px;
+  }
+  body .display_list ul#countries {
+    margin-bottom: 25px;
+  }
+  body .display_list ul#countries li {
+    font-size: 14px;
+  }
+  body .display_list .country-name-flag {
+    width: 300px;
+  }
+  body .display_list .country-name-flag h3 {
+    padding: 16px;
+  }
+  body .display_list .countries_list li {
+    width: 300px;
+    font-size: 14px;
+  }
+  body .display_list .countries_list .countries_list-special {
+    font-size: 16px;
+    width: 90px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    width: 100%;
+  }
+  body .col-md-1 {
+    width: 8.33%;
+  }
+  body .col-md-2 {
+    width: 16.66%;
+  }
+  body .col-md-3 {
+    width: 25%;
+  }
+  body .col-md-4 {
+    width: 33.33%;
+  }
+  body .col-md-5 {
+    width: 41.66%;
+  }
+  body .col-md-6 {
+    width: 50%;
+  }
+  body .col-md-7 {
+    width: 58.33%;
+  }
+  body .col-md-8 {
+    width: 66.66%;
+  }
+  body .col-md-9 {
+    width: 75%;
+  }
+  body .col-md-10 {
+    width: 83.33%;
+  }
+  body .col-md-11 {
+    width: 91.66%;
+  }
+  body .col-md-12 {
+    width: 100%;
+  }
+  body .row {
+    -ms-flex-direction: row;
+        flex-direction: row;
+    height: auto;
+  }
+  body .buttons h1, body .buttons .display_list div h2, body .display_list div .buttons h2 {
+    font-size: 25px;
+    text-align: center;
+  }
+  body .display_list .border {
+    width: 400px;
+  }
+  body .display_list ul#countries {
+    margin-bottom: 25px;
+  }
+  body .display_list ul#countries li {
+    font-size: 16px;
+  }
+  body .display_list .country-name-flag {
+    width: 400px;
+  }
+  body .display_list .country-name-flag h3 {
+    padding: 18px;
+  }
+  body .display_list .countries_list li {
+    width: 400px;
+    font-size: 16px;
+  }
+  body .display_list .countries_list .countries_list-special {
+    font-size: 16px;
+    width: 90px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1279px) {
+  body .col-lg-1 {
+    width: 8.33%;
+  }
+  body .col-lg-2 {
+    width: 16.66%;
+  }
+  body .col-lg-3 {
+    width: 25%;
+  }
+  body .col-lg-4 {
+    width: 33.33%;
+  }
+  body .col-lg-5 {
+    width: 41.66%;
+  }
+  body .col-lg-6 {
+    width: 50%;
+  }
+  body .col-lg-7 {
+    width: 58.33%;
+  }
+  body .col-lg-8 {
+    width: 66.66%;
+  }
+  body .col-lg-9 {
+    width: 75%;
+  }
+  body .col-lg-10 {
+    width: 83.33%;
+  }
+  body .col-lg-11 {
+    width: 91.66%;
+  }
+  body .col-lg-12 {
+    width: 100%;
+  }
+  body .buttons h1, body .buttons .display_list div h2, body .display_list div .buttons h2 {
+    font-size: 35px;
+    text-align: center;
+  }
+  body .display_list .border {
+    width: 500px;
+  }
+  body .display_list ul#countries {
+    margin-bottom: 25px;
+  }
+  body .display_list ul#countries li {
+    font-size: 20px;
+  }
+  body .display_list .country-name-flag {
+    width: 500px;
+  }
+  body .display_list .country-name-flag h3 {
+    padding: 10px;
+  }
+  body .display_list .countries_list li {
+    width: 500px;
+    font-size: 18px;
+  }
+  body .display_list .countries_list .countries_list-special {
+    font-size: 16px;
+    width: 90px;
+  }
+}
+
+@media (min-width: 1280px) {
+  body .col-xl-1 {
+    width: 8.33%;
+  }
+  body .col-xl-2 {
+    width: 16.66%;
+  }
+  body .col-xl-3 {
+    width: 25%;
+  }
+  body .col-xl-4 {
+    width: 33.33%;
+  }
+  body .col-xl-5 {
+    width: 41.66%;
+  }
+  body .col-xl-6 {
+    width: 50%;
+  }
+  body .col-xl-7 {
+    width: 58.33%;
+  }
+  body .col-xl-8 {
+    width: 66.66%;
+  }
+  body .col-xl-9 {
+    width: 75%;
+  }
+  body .col-xl-10 {
+    width: 83.33%;
+  }
+  body .col-xl-11 {
+    width: 91.66%;
+  }
+  body .col-xl-12 {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
