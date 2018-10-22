@@ -34,11 +34,22 @@ function searchCountriesBy() {
       var urlCountry2 = url2 + countryCapital;
       $.getJSON(urlCountry2, showCountriesList);
     } else if ($('#currency').is(':selected')) {
-      var urlCountry3 = url3 + countryCurrency;
-      $.getJSON(urlCountry3, showCountriesList);
+      if (countryCurrency.length > 3) {
+        alert ("Code is too long. Please enter up to 3 digit according to ISO 4217 Currency Codes.");
+        return;
+      } else {
+        var urlCountry3 = url3 + countryCurrency;
+        $.getJSON(urlCountry3, showCountriesList)
+      }
     } else if($('#language').is(':selected')) {
-      var urlCountry4 = url4 + countryLanguage;
-      $.getJSON(urlCountry4, showCountriesList);
+      if (countryLanguage.length > 3) {
+        alert ("Code is too long. Please enter upt to 3 digit according to ISO 639-1 language code.");
+        return;
+      } else {
+        var urlCountry4 = url4 + countryLanguage;
+        $.getJSON(urlCountry4, showCountriesList);
+      }
+
     }
   });
 
@@ -51,8 +62,7 @@ function showCountriesList(resp) {
     console.log(resp);
     resp.forEach(function(item) {
       var countryData = `
-      <ul class="countries">
-       <li>
+
         <div class="country-name-flag">
             <span class="flag-icon flag-icon-${item.alpha2Code.toLowerCase()}"></span>
             <h3>${item.name}</h3>
@@ -67,8 +77,6 @@ function showCountriesList(resp) {
           <li><span class="countries_list-special">Region: </span>${item.region}</li>
         </ul>
         <div class="border"></div>
-       </li>
-      </ul>
       `;
 
       $('<li>').html(countryData).appendTo(countriesList);
@@ -78,12 +86,12 @@ function showCountriesList(resp) {
       $(".countries_list li").
       filter(function( index ) {
         return index % 2 === 0;
-      }).css({"color": "#AA3F39", "background-color": "#68979B"});
+      }).css({"color": "#fff", "background-color": "#0039e6"});
 
 
       $(".countries_list-special").filter(function( index ) {
         return index % 2 === 0;
-      }).css("color", "#AA3F39");
+      }).css("color", "#fff");
 
     });
 }
