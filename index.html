@@ -10,37 +10,32 @@
         <body>
               <div class="row">
                   <div class="buttons col-xs-12 col-sm-4 col-md-5 col-lg-5 col-xl-6">
-                    <div class="row">
-                      <div class="col-xl-6">
-                        <img src="images/countries.jpg" alt="countries">
-                      </div>
-                      <div class="col-xl-6">
+                    <div class="button_title">
+                        <h1>Country search engine</h1>
+                    </div>
                         <div class="button_search">
                           <div>
-                            <h1>Country search engine</h1>
+                            <img src="images/countries_logo.png" alt="logo" class="buttons_logo">
                           </div>
-                          <button id="search">Search a country</button>
-                          <input id="country-name" type="text" placeholder="Enter a country name">
                         </div>
                         <div class="buttons_search-by">
                             <button id="search_by">Search a country by:
                             </button>
                             <select id="mySelectBox">
+                              <option id="name">Name</option>
                               <option id="capital">Capital</option>
                               <option id="currency">Currency</option>
                               <option id="language">Language</option>
                             </select>
                           <input id="country-attribute" type="text" placeholder="Enter a value">
                         </div>
-                      </div>
-                    </div>
                   </div>
                   <div class="display_list col-xs-12 col-sm-8 col-md-7 col-lg-7 col-xl-6">
-                    <div>
+                    <div class="display_list-title">
                         <h2>List of countries</h2>
                     </div>
                       <ul id="countries">
-                          <li>No data</li>
+                          <li></li>
                       </ul>
                   </div>
               </div>
