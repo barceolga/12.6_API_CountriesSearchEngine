@@ -37,7 +37,7 @@ function searchCountriesBy() {
         return;
       } else {
         var urlCountry3 = url3 + countryCurrency;
-        $.getJSON(urlCountry3, showCountriesList)
+        $.getJSON(urlCountry3, showCountriesList);
       }
     } else if($('#language').is(':selected')) {
       if (countryLanguage.length > 3) {
