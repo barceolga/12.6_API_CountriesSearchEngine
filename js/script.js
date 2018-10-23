@@ -12,7 +12,6 @@ $("#search_by").click(searchCountriesBy);
 
 // FUNCTION FOR SEARCHING COUNTRIES
 
-
 function searchCountriesBy() {
     var countryName = $('#country-attribute').val();
     var countryCapital = $('#country-attribute').val();
@@ -21,43 +20,51 @@ function searchCountriesBy() {
     if (!countryCapital.length || !countryCurrency.length || !countryLanguage.length) {
       return;
     }
-    $('#mySelectBox option').each(function() {
-    if($("#name").is(':selected')) {
-      if (!countryName.length) {
-        countryName = "Spain";
+      switch ($('#mySelectBox option:selected').val()) {
+        case "Name":
+          var urlCountry = url + countryName;
+          $.getJSON(urlCountry, showCountriesList);
+          break;
+        case "Capital":
+          var urlCountry2 = url2 + countryCapital;
+          $.getJSON(urlCountry2, showCountriesList);
+          break;
+        case "Currency":
+          if (countryCurrency.length !== 3) {
+            var win = window.open('','','width=300,height=100');
+            win.document.write("Wrong code. Please enter 3 digit's code, according to ISO 4217 Currency Codes.");
+            win.focus();
+            setTimeout(function() {win.close();}, 10000);
+            return;
+          } else {
+            var urlCountry3 = url3 + countryCurrency;
+            $.getJSON(urlCountry3, showCountriesList);
+          }
+          break;
+        case "Language":
+          if (countryLanguage.length > 3 || countryLanguage.length < 2) {
+            var w = window.open('','','width=300,height=100');
+            w.document.write("Wrong code. Please enter 2-3 digit's code, according to ISO 639-1 language code.");
+            w.focus();
+            setTimeout(function() {w.close();}, 10000);
+            return;
+          } else {
+            var urlCountry4 = url4 + countryLanguage;
+            $.getJSON(urlCountry4, showCountriesList);
+          }
+          break;
+        default:
+          var w = window.open('','','width=200,height=100');
+          w.document.write("Please select an option and enter a valid value.");
+          w.focus();
+          setTimeout(function() {w.close();}, 10000)
       }
-      var urlCountry = url + countryName;
-      $.getJSON(urlCountry, showCountriesList);
-    } else if($('#capital').is(':selected')) {
-      var urlCountry2 = url2 + countryCapital;
-      $.getJSON(urlCountry2, showCountriesList);
-    } else if ($('#currency').is(':selected')) {
-      if (countryCurrency.length !== 3) {
-        alert ("Bad code. Please enter 3 digit's code according to ISO 4217 Currency Codes.");
-        return;
-      } else {
-        var urlCountry3 = url3 + countryCurrency;
-        $.getJSON(urlCountry3, showCountriesList);
-      }
-    } else if($('#language').is(':selected')) {
-      if (countryLanguage.length > 3) {
-        alert ("Code is too long. Please enter upt to 3 digit according to ISO 639-1 language code.");
-        return;
-      } else {
-        var urlCountry4 = url4 + countryLanguage;
-        $.getJSON(urlCountry4, showCountriesList);
-      }
-
-    }
-  });
-
 }
 
 // FUNCTION FOR DISPLAYING COUNTRIES LIST
 
 function showCountriesList(resp) {
     countriesList.empty();
-    console.log(resp);
     resp.forEach(function(item) {
       var countryData = `
 
