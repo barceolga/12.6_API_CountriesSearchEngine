@@ -357,7 +357,7 @@ body .display_list .countries_list .countries_list-special {
     text-align: center;
   }
   body .display_list ul#countries {
-    margin-bottom: 25px;
+    margin: 100px 0 25px 0;
   }
   body .display_list ul#countries li {
     font-size: 14px;
