@@ -9,17 +9,15 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   height: auto;
-  width: 100vw;
 }
 
 body .row {
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
-  position: relative;
 }
 
 body .row:after {
@@ -40,7 +38,7 @@ body .buttons {
       align-items: center;
   -ms-flex-pack: start;
       justify-content: flex-start;
-  z-index: 2;
+  z-index: 1;
 }
 
 body .buttons .button_search div {
@@ -59,6 +57,7 @@ body .buttons .button_search div .buttons_logo {
 body .buttons .button_title {
   width: 100%;
   background-color: #809fff;
+  border: none;
 }
 
 body .buttons .button_title h1 {
@@ -162,7 +161,8 @@ body .display_list .display_list-title {
   right: 0;
   width: 50%;
   background-color: #809fff;
-  z-index: 2;
+  z-index: 1;
+  border: none;
 }
 
 body .display_list .display_list-title h2 {
@@ -580,7 +580,7 @@ body .display_list .countries_list .countries_list-special {
 
 @media (min-width: 992px) and (max-width: 1279px) {
   body {
-    overflow-x: auto;
+    overflow-x: hidden;
   }
   body .col-lg-1 {
     width: 8.33%;
@@ -617,6 +617,9 @@ body .display_list .countries_list .countries_list-special {
   }
   body .col-lg-12 {
     width: 100%;
+  }
+  body .row {
+    overflow-x: hidden;
   }
   body .buttons .button_title {
     background-color: #809fff;

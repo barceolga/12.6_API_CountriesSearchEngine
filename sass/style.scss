@@ -32,15 +32,13 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   height: auto;
-  width: 100vw;
 
 .row {
-  width: 100%;
+  width: 100vw;
   height: auto;
   @include clearfix;
   display: flex;
   flex-direction: row;
-  position: relative;
 }
 
   .buttons {
@@ -51,7 +49,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    z-index: 2;
+    z-index: 1;
     .button_search {
       div {
         display: flex;
@@ -65,6 +63,7 @@ body {
    .button_title {
      width: 100%;
      background-color: $project-blue;
+     border: none;
      h1 {
        font-family: $main-font;
        font-size: 45px;
@@ -152,7 +151,8 @@ body {
       right: 0;
       width: 50%;
       background-color: $project-blue;
-      z-index: 2;
+      z-index: 1;
+      border: none;
      h2 {
        color: $deep-brown;
        text-shadow: 2px 2px #4C8787;
@@ -525,7 +525,7 @@ body {
 
 @media #{$desktop_small} {
   body {
-     overflow-x:  auto;
+     overflow-x:  hidden;
     .col-lg-1 {width: 8.33%;}
     .col-lg-2 {width: 16.66%;}
     .col-lg-3 {width: 25%;}
@@ -538,6 +538,9 @@ body {
     .col-lg-10 {width: 83.33%;}
     .col-lg-11 {width: 91.66%;}
     .col-lg-12 {width: 100%;}
+    .row  {
+      overflow-x:  hidden;
+    }
     .buttons {
       .button_title {
           background-color: $project-blue;
