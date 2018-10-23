@@ -40,10 +40,41 @@ body {
   display: flex;
   flex-direction: row;
 }
-
+.header {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 105px;
+  background-color: $project-blue;
+  z-index: 1;
+  .buttons_title {
+    h1 {
+      font-family: $main-font;
+      font-size: 45px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: $deep-brown;
+      text-shadow: 2px 2px #4C8787;
+      margin: 25px auto;
+      text-align: center;
+    }
+  }
+  .list-title {
+    h2 {
+      color: $deep-brown;
+      text-shadow: 2px 2px #4C8787;
+      font-family: $main-font;
+      font-size: 45px;
+      font-weight: 600;
+      margin: 25px 0;
+      text-align: center;
+    }
+  }
+}
   .buttons {
     position: fixed;
-    top: 0;
+    top: 105px;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -60,22 +91,6 @@ body {
         }
       }
     }
-   .button_title {
-     width: 100%;
-     background-color: $project-blue;
-     border: none;
-     h1 {
-       font-family: $main-font;
-       font-size: 45px;
-       font-weight: 800;
-       text-transform: uppercase;
-       color: $deep-brown;
-       text-shadow: 2px 2px #4C8787;
-       margin: 25px auto;
-       text-align: center;
-     }
-   }
-
 
     button {
       width: 200px;
@@ -139,29 +154,12 @@ body {
    flex-direction: column;
    align-items: center;
    justify-content: flex-start;
+   height: auto;
    position: absolute;
    top: 0;
    right: 0;
    .display_list-title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 50%;
-      background-color: $project-blue;
-      z-index: 1;
-      border: none;
-     h2 {
-       color: $deep-brown;
-       text-shadow: 2px 2px #4C8787;
-       font-family: $main-font;
-       font-size: 45px;
-       font-weight: 600;
-       margin: 25px 0;
-       text-align: left;
-     }
+      display: none;
    }
    .border {
      width: 550px;
@@ -247,7 +245,7 @@ body {
 @media #{$phone_portrait} {
 
   body {
-    overflow-y: auto;
+
     .col-xs-1 {width: 8.33%;}
     .col-xs-2 {width: 16.66%;}
     .col-xs-3 {width: 25%;}
@@ -261,20 +259,28 @@ body {
     .col-xs-11 {width: 91.66%;}
     .col-xs-12 {width: 100%;}
 
-    .row {
+    .header{
+      display: flex;
       flex-direction: column;
-      height: auto;
-    }
-    .buttons {
-      z-index: 1;
-      background: linear-gradient(to right, #fff, #FFCDCA);
-      .button_title {
+      .buttons_title {
         h1 {
           font-size: 25px;
           text-align: center;
           margin: 5px auto;
         }
       }
+      .list-title {
+        display: none;
+      }
+    }
+    .row {
+      flex-direction: column;
+      height: auto;
+    }
+    .buttons {
+      top: 40px;
+      z-index: 1;
+      background: linear-gradient(to right, #fff, #FFCDCA);
       button {
         margin: 5px;
         height: 35px;
@@ -306,13 +312,20 @@ body {
         width: 100vw;
       }
       .display_list-title {
+        position:fixed;
+        display: block;
         top: 275px;
         left: 0;
         width: 100%;
         height: 50px;
+        z-index: 1;
+        background-color: $project-blue;
         h2 {
           font-size: 25px;
           text-align: center;
+          color: $deep-brown;
+          margin: 0 auto;
+          padding: 10px;
         }
       }
 
@@ -332,10 +345,11 @@ body {
         li {
           width: 100vw;
           font-size: 14px;
+          height: auto;
         }
         .countries_list-special {
           font-size: 16px;
-          width: 90px;
+          width: 100px;
         }
       }
     }
@@ -360,11 +374,32 @@ body {
     .col-sm-11 {width: 91.66%;}
     .col-sm-12 {width: 100%;}
 
+    .header{
+      display: flex;
+      flex-direction: column;
+      .buttons_title {
+        h1 {
+          font-size: 24px;
+          text-align: center;
+          margin: 0 auto;
+          padding: 5px;
+        }
+      }
+      .list-title {
+        h2 {
+          font-size: 24px;
+          text-align: center;
+          margin: 0 auto;
+          padding: 15px;
+        }
+      }
+    }
     .row {
       flex-direction: row;
       height: auto;
     }
     .buttons {
+       top: 78px;
       .button_search {
        div {
          .buttons_logo {
@@ -373,17 +408,6 @@ body {
            transform: scale(0.75);
          }
        }
-      }
-      .button_title {
-        background-color: $project-blue;
-        height: 80px;
-        border: none;
-        h1 {
-          font-size: 24px;
-          text-align: center;
-          margin: 10px auto 0 auto;
-          padding: 5px;
-        }
       }
       button {
         margin: 5px;
@@ -405,12 +429,7 @@ body {
     .display_list {
 
       .display_list-title {
-        width: 66.66%;
-        height: 80px;
-        h2 {
-          font-size: 24px;
-          margin: 10px auto 0 auto;
-        }
+        display: none;
       }
       .border {
         width: 300px;
@@ -433,10 +452,11 @@ body {
         li {
           width: 300px;
           font-size: 14px;
+          height: auto;
         }
         .countries_list-special {
           font-size: 16px;
-          width: 90px;
+          width: 100px;
         }
       }
     }
@@ -446,7 +466,6 @@ body {
 
   body {
     width: 100vw;
-    overflow-x: hidden;
 
     .col-md-1 {width: 8.33%;}
     .col-md-2 {width: 16.66%;}
@@ -461,16 +480,32 @@ body {
     .col-md-11 {width: 91.66%;}
     .col-md-12 {width: 100%;}
 
+    .header {
+      .buttons_title {
+        h1 {
+          font-size: 22px;
+          text-align: center;
+        }
+      }
+      .list-title {
+        h2 {
+          font-size: 22px;
+          text-align: center;
+        }
+      }
+    }
+
     .row {
       flex-direction: row;
       height: auto;
     }
     .buttons {
+      top: 77px;
       .button_search {
         div {
           .buttons_logo {
             display: block;
-            margin: 25px auto 0 auto;
+            margin: 15px auto 0 auto;
             transform: scale(0.75);
           }
         }
@@ -485,19 +520,12 @@ body {
         }
       }
     .display_list {
-      .display_list-title {
-        width: 58.33%;
-        margin: 0;
-        h2 {
-          font-size: 22px;
-        }
-      }
       .border {
         width: 400px;
       }
 
       ul#countries {
-        margin: 80px 5px 25px 0;
+        margin: 80px 5px 190px 0;
         li {
           font-size: 16px;
         }
@@ -525,7 +553,6 @@ body {
 
 @media #{$desktop_small} {
   body {
-     overflow-x:  hidden;
     .col-lg-1 {width: 8.33%;}
     .col-lg-2 {width: 16.66%;}
     .col-lg-3 {width: 25%;}
@@ -538,34 +565,29 @@ body {
     .col-lg-10 {width: 83.33%;}
     .col-lg-11 {width: 91.66%;}
     .col-lg-12 {width: 100%;}
-    .row  {
-      overflow-x:  hidden;
-    }
-    .buttons {
-      .button_title {
-          background-color: $project-blue;
-          width: 100%;
-          h1 {
-            font-size: 30px;
-            text-align: center;
+
+    .header {
+      .buttons_title {
+        h1 {
+          font-size: 30px;
+          text-align: center;
         }
       }
-    }
-    .display_list {
-      align-items: flex-end;
-      .border {
-        width: 500px;
-      }
-      .display_list-title {
-        width: 58.34%;
-        background-color: $project-blue;
+      .list-title {
         h2 {
           font-size: 30px;
           text-align: center;
         }
       }
+    }
+
+    .display_list {
+      align-items: flex-end;
+      .border {
+        width: 500px;
+      }
       ul#countries {
-        margin: 80px 5px 25px 0;
+        margin: 100px 5px 25px 0;
         li {
           font-size: 20px;
         }
