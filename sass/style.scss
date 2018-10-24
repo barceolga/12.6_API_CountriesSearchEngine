@@ -38,9 +38,8 @@ body {
   height: auto;
   @include clearfix;
   display: flex;
-  display: -webkit-flex;
   flex-direction: row;
-  -webkit-flex-direction: row;
+
 }
 .header {
   width: 100vw;
@@ -82,14 +81,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    justify-content: -webkit-flex-start;
     z-index: 1;
     .button_search {
       div {
         display: flex;
-        display: -webkit-flex;
         flex-direction: column;
-        -webkit-flex-direction: column;
         align-items: center;
         .buttons_logo {
           margin: 25px auto;
@@ -149,21 +145,16 @@ body {
     }
     .buttons_search-by {
       display: flex;
-      display: -webkit-flex;
       flex-direction: column;
-      -webkit-flex-direction: column;
       align-items: center;
     }
   }
 
  .display_list {
    display: flex;
-   display: -webkit-flex;
-   -webkit-flex-direction: column;
    flex-direction: column;
    align-items: center;
    justify-content: flex-start;
-   justify-content: -webkit-flex-start;
    height: auto;
    position: absolute;
    top: 0;
@@ -179,11 +170,8 @@ body {
    }
    .country-name-flag {
      display: flex;
-     display: -webkit-flex;
-     -webkit-flex-direction: row;
      flex-direction: row;
      justify-content: flex-start;
-     justify-content: -webkit-flex-start;
      width: 550px;
      margin: 25px 0 0 0;
      background-color: #ffffb3;
@@ -274,8 +262,6 @@ body {
 
     .header{
       display: flex;
-      display: -webkit-flex;
-      -webkit-flex-direction: column;
       flex-direction: column;
       .buttons_title {
         h1 {
@@ -290,7 +276,6 @@ body {
     }
     .row {
       flex-direction: column;
-      -webkit-flex-direction: column;
       height: auto;
     }
     .buttons {
@@ -392,9 +377,7 @@ body {
 
     .header{
       display: flex;
-      display: -webkit-flex;
       flex-direction: column;
-      -webkit-flex-direction: column;
       .buttons_title {
         h1 {
           font-size: 24px;
@@ -414,7 +397,6 @@ body {
     }
     .row {
       flex-direction: row;
-      -webkit-flex-direction: row;
       height: auto;
     }
     .buttons {
@@ -516,7 +498,6 @@ body {
 
     .row {
       flex-direction: row;
-      -webkit-flex-direction: row;
       height: auto;
     }
     .buttons {
@@ -603,7 +584,6 @@ body {
 
     .display_list {
       align-items: flex-end;
-      align-items: -webkit-flex-end;
       .border {
         width: 500px;
       }
