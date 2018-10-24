@@ -43,10 +43,10 @@ function searchCountriesBy() {
           break;
         case "Language":
           if (countryLanguage.length > 3 || countryLanguage.length < 2) {
-            var w = window.open('','','width=300,height=100');
-            w.document.write("Wrong code. Please enter 2-3 digit's code, according to ISO 639-1 language code.");
-            w.focus();
-            setTimeout(function() {w.close();}, 10000);
+            var wind = window.open('','','width=300,height=100');
+            wind.document.write("Wrong code. Please enter 2-3 digit's code, according to ISO 639-1 language code.");
+            wind.focus();
+            setTimeout(function() {wind.close();}, 10000);
             return;
           } else {
             var urlCountry4 = url4 + countryLanguage;
@@ -57,7 +57,7 @@ function searchCountriesBy() {
           var w = window.open('','','width=200,height=100');
           w.document.write("Please select an option and enter a valid value.");
           w.focus();
-          setTimeout(function() {w.close();}, 10000)
+          setTimeout(function() {w.close();}, 10000);
       }
 }
 
