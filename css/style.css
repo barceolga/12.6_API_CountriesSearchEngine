@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
 @import url("https://fonts.googleapis.com/css?family=Slabo+27px");
 * {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
 }
 
 body {
@@ -14,10 +15,11 @@ body {
 body .row {
   width: 100vw;
   height: auto;
-  display: -ms-flexbox;
+  display: -moz-box;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+       flex-direction: row;
 }
 
 body .row:after {
@@ -61,24 +63,26 @@ body .buttons {
   position: fixed;
   top: 105px;
   left: 0;
-  display: -ms-flexbox;
+  display: -moz-box;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+       flex-direction: column;
+  -moz-box-align: center;
+       align-items: center;
+  -moz-box-pack: start;
+       justify-content: flex-start;
   z-index: 1;
 }
 
 body .buttons .button_search div {
-  display: -ms-flexbox;
+  display: -moz-box;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: center;
-      align-items: center;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+       flex-direction: column;
+  -moz-box-align: center;
+       align-items: center;
 }
 
 body .buttons .button_search div .buttons_logo {
@@ -141,23 +145,25 @@ body .buttons select:hover {
 }
 
 body .buttons .buttons_search-by {
-  display: -ms-flexbox;
+  display: -moz-box;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: center;
-      align-items: center;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+       flex-direction: column;
+  -moz-box-align: center;
+       align-items: center;
 }
 
 body .display_list {
-  display: -ms-flexbox;
+  display: -moz-box;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+       flex-direction: column;
+  -moz-box-align: center;
+       align-items: center;
+  -moz-box-pack: start;
+       justify-content: flex-start;
   height: auto;
   position: absolute;
   top: 0;
@@ -176,12 +182,13 @@ body .display_list .border {
 }
 
 body .display_list .country-name-flag {
-  display: -ms-flexbox;
+  display: -moz-box;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+       flex-direction: row;
+  -moz-box-pack: start;
+       justify-content: flex-start;
   width: 550px;
   margin: 25px 0 0 0;
   background-color: #ffffb3;
@@ -296,10 +303,11 @@ body .display_list .countries_list .countries_list-special {
     width: 100%;
   }
   body .header {
-    display: -ms-flexbox;
+    display: -moz-box;
     display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+         flex-direction: column;
   }
   body .header .buttons_title h1 {
     font-size: 25px;
@@ -310,8 +318,9 @@ body .display_list .countries_list .countries_list-special {
     display: none;
   }
   body .row {
-    -ms-flex-direction: column;
-        flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+         flex-direction: column;
     height: auto;
   }
   body .buttons {
@@ -427,10 +436,11 @@ body .display_list .countries_list .countries_list-special {
     width: 100%;
   }
   body .header {
-    display: -ms-flexbox;
+    display: -moz-box;
     display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+         flex-direction: column;
   }
   body .header .buttons_title h1 {
     font-size: 24px;
@@ -445,8 +455,9 @@ body .display_list .countries_list .countries_list-special {
     padding: 15px;
   }
   body .row {
-    -ms-flex-direction: row;
-        flex-direction: row;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+         flex-direction: row;
     height: auto;
   }
   body .buttons {
@@ -455,7 +466,8 @@ body .display_list .countries_list .countries_list-special {
   body .buttons .button_search div .buttons_logo {
     display: block;
     margin: 0 auto;
-    transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
   }
   body .buttons button {
     margin: 5px;
@@ -551,8 +563,9 @@ body .display_list .countries_list .countries_list-special {
     text-align: center;
   }
   body .row {
-    -ms-flex-direction: row;
-        flex-direction: row;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+         flex-direction: row;
     height: auto;
   }
   body .buttons {
@@ -561,7 +574,8 @@ body .display_list .countries_list .countries_list-special {
   body .buttons .button_search div .buttons_logo {
     display: block;
     margin: 15px auto 0 auto;
-    transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
   }
   body .buttons .button_title {
     background-color: #809fff;
@@ -641,8 +655,8 @@ body .display_list .countries_list .countries_list-special {
     text-align: center;
   }
   body .display_list {
-    -ms-flex-align: end;
-        align-items: flex-end;
+    -moz-box-align: end;
+         align-items: flex-end;
   }
   body .display_list .border {
     width: 500px;
