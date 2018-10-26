@@ -290,7 +290,7 @@ body {
       top: 40px;
       z-index: 1;
       background: linear-gradient(to right, #fff, #FFCDCA);
-      
+
       button {
         margin: 5px;
         height: 35px;
@@ -417,10 +417,14 @@ body {
        top: 78px;
       .button_search {
        div {
+         height: 80.25px;
+         width: 150px;
          .buttons_logo {
            display: block;
-           margin: 0 auto;
-           transform: scale(0.75);
+           margin: 0;
+           height: 80.25px;
+           width: 150px;
+           object-fit: cover;
          }
        }
       }

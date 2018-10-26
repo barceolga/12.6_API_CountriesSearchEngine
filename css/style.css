@@ -463,11 +463,16 @@ body .display_list .countries_list .countries_list-special {
   body .buttons {
     top: 78px;
   }
+  body .buttons .button_search div {
+    height: 80.25px;
+    width: 150px;
+  }
   body .buttons .button_search div .buttons_logo {
     display: block;
-    margin: 0 auto;
-    -webkit-transform: scale(0.75);
-            transform: scale(0.75);
+    margin: 0;
+    height: 80.25px;
+    width: 150px;
+    object-fit: cover;
   }
   body .buttons button {
     margin: 5px;
