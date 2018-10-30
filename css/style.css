@@ -350,6 +350,7 @@ body .display_list .countries_list .countries_list-special {
     height: 50px;
   }
   body .display_list {
+    position: relative;
     top: 200px;
   }
   body .display_list .border {

@@ -286,6 +286,9 @@ body {
       flex-direction: column;
       height: auto;
     }
+    .main {
+
+    }
     .buttons {
       top: 40px;
       z-index: 1;
@@ -317,6 +320,7 @@ body {
       }
     }
     .display_list {
+       position: relative;
        top: 200px;
       .border {
         width: 100vw;
