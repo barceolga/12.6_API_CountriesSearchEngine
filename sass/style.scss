@@ -30,7 +30,7 @@ $desktop_big: "(min-width: 1280px)";
 body {
   background: linear-gradient(to right, #fff, #FFCDCA);
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   height: auto;
 
 .row {
@@ -77,10 +77,11 @@ body {
 }
 
   .buttons {
-    position: fixed;
+    /*position: fixed;
     top: 105px;
-    left: 0;
+    left: 0;*/
     display: flex;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -161,10 +162,9 @@ body {
    flex-direction: column;
    align-items: center;
    justify-content: flex-start;
-   height: auto;
-   position: absolute;
+   /*position: absolute;
    top: 0;
-   right: 0;
+   right: 0;*/
    .display_list-title {
       display: none;
    }
@@ -208,10 +208,10 @@ body {
 
    ul#countries {
      list-style-type: none;
-     height: auto;
      padding-left: 0;
      margin: 100px 25px 0 0;
-     height: auto;
+     height: 500px;
+     overflow-y: scroll;
      li {
        list-style-type: none;
        font-family: $secondary_font;
@@ -290,7 +290,7 @@ body {
 
     }
     .buttons {
-      top: 40px;
+      //top: 40px;
       z-index: 1;
       background: linear-gradient(to right, #fff, #FFCDCA);
 
@@ -320,16 +320,16 @@ body {
       }
     }
     .display_list {
-       position: relative;
-       top: 200px;
+       //position: relative;
+       //top: 200px;
       .border {
         width: 100vw;
       }
-      .display_list-title {
-        position:fixed;
+      .list-title {
+        /*position:fixed;
         display: block;
         top: 275px;
-        left: 0;
+        left: 0;*/
         width: 100%;
         height: 50px;
         z-index: 1;

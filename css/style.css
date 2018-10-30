@@ -8,7 +8,7 @@
 body {
   background: linear-gradient(to right, #fff, #FFCDCA);
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   height: auto;
 }
 
@@ -60,11 +60,12 @@ body .header .list-title h2 {
 }
 
 body .buttons {
-  position: fixed;
-  top: 105px;
-  left: 0;
+  /*position: fixed;
+    top: 105px;
+    left: 0;*/
   display: -moz-box;
   display: flex;
+  height: 100vh;
   -moz-box-orient: vertical;
   -moz-box-direction: normal;
        flex-direction: column;
@@ -164,10 +165,9 @@ body .display_list {
        align-items: center;
   -moz-box-pack: start;
        justify-content: flex-start;
-  height: auto;
-  position: absolute;
-  top: 0;
-  right: 0;
+  /*position: absolute;
+   top: 0;
+   right: 0;*/
 }
 
 body .display_list .display_list-title {
@@ -220,10 +220,10 @@ body .display_list .country-name-flag .flag-icon {
 
 body .display_list ul#countries {
   list-style-type: none;
-  height: auto;
   padding-left: 0;
   margin: 100px 25px 0 0;
-  height: auto;
+  height: 500px;
+  overflow-y: scroll;
 }
 
 body .display_list ul#countries li {
@@ -324,7 +324,6 @@ body .display_list .countries_list .countries_list-special {
     height: auto;
   }
   body .buttons {
-    top: 40px;
     z-index: 1;
     background: linear-gradient(to right, #fff, #FFCDCA);
   }
@@ -349,24 +348,20 @@ body .display_list .countries_list .countries_list-special {
     margin: 0 auto;
     height: 50px;
   }
-  body .display_list {
-    position: relative;
-    top: 200px;
-  }
   body .display_list .border {
     width: 100vw;
   }
-  body .display_list .display_list-title {
-    position: fixed;
-    display: block;
-    top: 275px;
-    left: 0;
+  body .display_list .list-title {
+    /*position:fixed;
+        display: block;
+        top: 275px;
+        left: 0;*/
     width: 100%;
     height: 50px;
     z-index: 1;
     background-color: #809fff;
   }
-  body .display_list .display_list-title h2 {
+  body .display_list .list-title h2 {
     font-size: 25px;
     text-align: center;
     color: #3D0300;
