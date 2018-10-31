@@ -10,6 +10,14 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   height: auto;
+  /*.header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 105px;
+    background-color: $project-blue;
+    z-index: 1;*/
 }
 
 body .row {
@@ -28,17 +36,7 @@ body .row:after {
   clear: both;
 }
 
-body .header {
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 105px;
-  background-color: #809fff;
-  z-index: 1;
-}
-
-body .header .buttons_title h1 {
+body .buttons_title h1 {
   font-family: "Lato", sans-serif;
   font-size: 45px;
   font-weight: 800;
@@ -49,7 +47,7 @@ body .header .buttons_title h1 {
   text-align: center;
 }
 
-body .header .list-title h2 {
+body .list-title h2 {
   color: #3D0300;
   text-shadow: 2px 2px #4C8787;
   font-family: "Lato", sans-serif;
@@ -165,9 +163,6 @@ body .display_list {
        align-items: center;
   -moz-box-pack: start;
        justify-content: flex-start;
-  /*position: absolute;
-   top: 0;
-   right: 0;*/
 }
 
 body .display_list .display_list-title {
@@ -301,13 +296,6 @@ body .display_list .countries_list .countries_list-special {
   }
   body .col-xs-12 {
     width: 100%;
-  }
-  body .header {
-    display: -moz-box;
-    display: flex;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
-         flex-direction: column;
   }
   body .header .buttons_title h1 {
     font-size: 25px;

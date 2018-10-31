@@ -41,14 +41,15 @@ body {
     flex-direction: row;
 
   }
-  .header {
+  
+  /*.header {
     width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
     height: 105px;
     background-color: $project-blue;
-    z-index: 1;
+    z-index: 1;*/
 
   .buttons_title {
     h1 {
@@ -74,7 +75,7 @@ body {
       text-align: center;
     }
   }
-}
+
 
   .buttons {
     /*position: fixed;
@@ -162,9 +163,9 @@ body {
    flex-direction: column;
    align-items: center;
    justify-content: flex-start;
-   /*position: absolute;
-   top: 0;
-   right: 0;*/
+   //position: absolute;
+   //top: 0;
+   //right: 0;
    .display_list-title {
       display: none;
    }
@@ -249,7 +250,7 @@ body {
          }
        }
    }
-}
+ }
 
 @media #{$phone_portrait} {
 
@@ -269,8 +270,8 @@ body {
     .col-xs-12 {width: 100%;}
 
     .header{
-      display: flex;
-      flex-direction: column;
+      //display: flex;
+      //flex-direction: column;
       .buttons_title {
         h1 {
           font-size: 25px;
@@ -371,6 +372,7 @@ body {
     }
   }
 }
+
 
 @media #{$phone_landscape} {
 
