@@ -320,6 +320,10 @@ body .display_list .countries_list .countries_list-special {
     margin: 0 auto;
     height: 50px;
   }
+  body .buttons .buttons_search-by {
+    height: 100px;
+    width: auto;
+  }
   body .display_list {
     border: 10px solid red;
   }
