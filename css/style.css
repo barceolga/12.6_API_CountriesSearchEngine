@@ -15,11 +15,8 @@ body {
 body .main {
   width: 100vw;
   height: auto;
-  display: -moz-box;
-  display: flex;
-  -moz-box-orient: horizontal;
-  -moz-box-direction: normal;
-       flex-direction: row;
+  /*display: flex;
+    flex-direction: row;*/
 }
 
 body .main:after {
@@ -288,9 +285,6 @@ body .display_list .countries_list .countries_list-special {
     margin: 5px auto;
   }
   body .main {
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
-         flex-direction: column;
     height: auto;
   }
   body .buttons {

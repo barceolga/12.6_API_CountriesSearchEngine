@@ -37,8 +37,8 @@ body {
     width: 100vw;
     height: auto;
     @include clearfix;
-    display: flex;
-    flex-direction: row;
+    /*display: flex;
+    flex-direction: row;*/
 
   }
 
@@ -260,7 +260,6 @@ body {
         }
       }
     .main  {
-      flex-direction: column;
       height: auto;
     }
 
