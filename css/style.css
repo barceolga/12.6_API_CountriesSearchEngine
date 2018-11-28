@@ -10,13 +10,19 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   height: auto;
+  margin: 0;
 }
 
 body .main {
   width: 100vw;
   height: auto;
-  /*display: flex;
-    flex-direction: row;*/
+  display: -moz-box;
+  display: flex;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+       flex-direction: column;
+  -moz-box-pack: justify;
+       justify-content: space-between;
 }
 
 body .main:after {
@@ -25,21 +31,54 @@ body .main:after {
   clear: both;
 }
 
-body .buttons_title h1 {
+body .buttons_title {
+  display: -moz-box;
+  display: flex;
+  -moz-box-pack: justify;
+       justify-content: space-between;
+  height: 100px;
+  z-index: 1;
+  width: 100vw;
+  background-color: #adebad;
+}
+
+body .buttons_title div {
+  height: 100px;
+  width: 200px;
+}
+
+body .buttons_title div .buttons_logo {
+  height: 100px;
+  width: 200px;
+  object-fit: cover;
+}
+
+body .buttons_title div:nth-of-type(2) {
+  display: -moz-box;
+  display: flex;
+  -moz-box-align: center;
+       align-items: center;
+  width: calc(100vw - 400px);
+}
+
+body .buttons_title div:nth-of-type(2) h1 {
   font-family: "Lato", sans-serif;
-  font-size: 45px;
+  font-size: 35px;
   font-weight: 800;
   text-transform: uppercase;
   color: #3D0300;
   text-shadow: 2px 2px #4C8787;
-  margin: 25px auto;
+  margin: 15px auto;
+  text-align: center;
+  display: inline-block;
+  width: auto;
   text-align: center;
 }
 
 body .buttons {
   display: -moz-box;
   display: flex;
-  height: 100vh;
+  height: 40vh;
   -moz-box-orient: vertical;
   -moz-box-direction: normal;
        flex-direction: column;
@@ -50,21 +89,19 @@ body .buttons {
   z-index: 1;
 }
 
-body .buttons .button_search div {
+body .buttons .button_search {
   display: -moz-box;
   display: flex;
   -moz-box-orient: vertical;
   -moz-box-direction: normal;
        flex-direction: column;
-  -moz-box-align: center;
-       align-items: center;
+  -moz-box-align: start;
+       align-items: flex-start;
+  -moz-box-pack: center;
+       justify-content: center;
 }
 
-body .buttons .button_search div .buttons_logo {
-  margin: 25px auto;
-}
-
-body .buttons button {
+body .buttons .button_search button {
   width: 200px;
   height: 50px;
   font-family: "Slabo 27px", serif;
@@ -75,18 +112,18 @@ body .buttons button {
   text-shadow: 2px 2px #E1837E;
   border: none;
   border-radius: 25px;
-  margin: 10px;
+  margin: 5px;
   cursor: pointer;
   transition: 1s ease-in-out;
 }
 
-body .buttons button:hover {
+body .buttons .button_search button:hover {
   color: #809fff;
   background-color: #002525;
   text-shadow: none;
 }
 
-body .buttons input {
+body .buttons .button_search input {
   font-family: "Slabo 27px", serif;
   font-size: 20px;
   font-weight: 600;
@@ -97,11 +134,11 @@ body .buttons input {
   background-color: #FFF;
   transition: 1s ease-in-out;
   padding-left: 5px;
-  margin: 10px;
-  background-color: #b3c6ff;
+  margin: 5px;
+  background-color: #d6d6c2;
 }
 
-body .buttons select {
+body .buttons .button_search select {
   font-family: "Slabo 27px", serif;
   font-size: 20px;
   font-weight: 600;
@@ -110,24 +147,14 @@ body .buttons select {
   color: #002525;
   background-color: #FFF;
   margin-left: 5px;
-  margin: 10px;
-  background-color: #b3c6ff;
+  margin: 5px;
+  background-color: #d6d6c2;
 }
 
-body .buttons select:hover {
+body .buttons .button_search select:hover {
   color: #FFF;
   background-color: #002525;
   padding: 5px;
-}
-
-body .buttons .buttons_search-by {
-  display: -moz-box;
-  display: flex;
-  -moz-box-orient: vertical;
-  -moz-box-direction: normal;
-       flex-direction: column;
-  -moz-box-align: center;
-       align-items: center;
 }
 
 body .display_list {
@@ -149,13 +176,22 @@ body .display_list .border {
   margin: 0;
 }
 
+body .display_list .list-title {
+  background-color: #adebad;
+  width: 570px;
+  display: -moz-box;
+  display: flex;
+  -moz-box-align: center;
+       align-items: center;
+}
+
 body .display_list .list-title h2 {
   color: #3D0300;
   text-shadow: 2px 2px #4C8787;
   font-family: "Lato", sans-serif;
-  font-size: 45px;
+  font-size: 35px;
   font-weight: 600;
-  margin: 25px 0;
+  margin: 10px auto;
   text-align: center;
 }
 
@@ -199,8 +235,8 @@ body .display_list .country-name-flag .flag-icon {
 body .display_list ul#countries {
   list-style-type: none;
   padding-left: 0;
-  margin: 100px 25px 0 0;
-  height: 500px;
+  margin: 0 auto;
+  height: 335px;
   overflow-y: auto;
 }
 
@@ -280,10 +316,26 @@ body .display_list .countries_list .countries_list-special {
   body .col-xs-12 {
     width: 100%;
   }
-  body .buttons_title h1 {
-    font-size: 25px;
+  body .buttons_title {
+    height: 50px;
+    width: 100vw;
+  }
+  body .buttons_title div {
+    width: 100px;
+    height: 50px;
+  }
+  body .buttons_title div .buttons_logo {
+    width: 100px;
+    height: 50px;
+  }
+  body .buttons_title div:nth-of-type(2) {
+    width: calc(100vw - 200px);
+  }
+  body .buttons_title div:nth-of-type(2) h1 {
+    font-size: 15px;
     text-align: center;
     margin: 5px auto;
+    text-shadow: 0.7px 0.7px #4C8787;
   }
   body .main {
     height: auto;
@@ -291,14 +343,14 @@ body .display_list .countries_list .countries_list-special {
   body .buttons {
     z-index: 1;
     background: linear-gradient(to right, #fff, #FFCDCA);
-    height: 50vh;
-    border: 5px solid blue;
+    height: 40vh;
   }
   body .buttons button {
     margin: 5px;
     height: 35px;
     border-radius: 17.5px;
     font-size: 16px;
+    text-shadow: 1.4px 1.4px #E1837E;
   }
   body .buttons input {
     margin: 5px;
@@ -310,17 +362,10 @@ body .display_list .countries_list .countries_list-special {
     height: 35px;
     font-size: 16px;
   }
-  body .buttons .button_search .buttons_logo {
-    display: block;
-    margin: 0 auto;
-    height: 50px;
-  }
-  body .buttons .buttons_search-by {
-    height: 100px;
-    width: auto;
-  }
-  body .display_list {
-    border: 10px solid red;
+  body .buttons .button_search {
+    -moz-box-align: center;
+         align-items: center;
+    margin-top: 10px;
   }
   body .display_list .border {
     width: 100vw;
@@ -336,9 +381,11 @@ body .display_list .countries_list .countries_list-special {
     color: #3D0300;
     margin: 0 auto;
     padding: 10px;
+    text-shadow: 0.7px 0.7px #4C8787;
   }
   body .display_list ul#countries {
-    margin: 100px 0 25px 0;
+    margin: 0 auto;
+    height: 270px;
   }
   body .display_list ul#countries li {
     font-size: 14px;
@@ -362,7 +409,7 @@ body .display_list .countries_list .countries_list-special {
 
 @media (max-width: 767px) and (orientation: landscape) {
   body {
-    width: 100%;
+    width: 100vw;
   }
   body .col-sm-1 {
     width: 8.33%;
@@ -400,24 +447,27 @@ body .display_list .countries_list .countries_list-special {
   body .col-sm-12 {
     width: 100%;
   }
-  body .header {
-    display: -moz-box;
-    display: flex;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
-         flex-direction: column;
+  body .buttons_title {
+    height: 50px;
+    width: 100%;
   }
-  body .header .buttons_title h1 {
-    font-size: 24px;
+  body .buttons_title div {
+    height: 50px;
+    width: 100px;
+  }
+  body .buttons_title div .buttons_logo {
+    height: 50px;
+    width: 100px;
+  }
+  body .buttons_title div:nth-of-type(2) {
+    height: 50px;
+    width: calc(100vw - 200px);
+  }
+  body .buttons_title div:nth-of-type(2) h1 {
+    font-size: 15px;
     text-align: center;
     margin: 0 auto;
-    padding: 5px;
-  }
-  body .header .list-title h2 {
-    font-size: 24px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 15px;
+    text-shadow: 0.7px 0.7px #4C8787;
   }
   body .row {
     -moz-box-orient: horizontal;
@@ -426,43 +476,47 @@ body .display_list .countries_list .countries_list-special {
     height: auto;
   }
   body .buttons {
-    top: 78px;
+    width: 50%;
+    height: 100vh;
   }
-  body .buttons .button_search div {
-    height: 80.25px;
-    width: 150px;
+  body .buttons .button_search {
+    margin-top: 25px;
   }
-  body .buttons .button_search div .buttons_logo {
-    display: block;
-    margin: 0;
-    height: 80.25px;
-    width: 150px;
-    object-fit: cover;
-  }
-  body .buttons button {
+  body .buttons .button_search button {
     margin: 5px;
     height: 35px;
     border-radius: 17.5px;
     font-size: 16px;
+    font-size: 16px;
+    text-shadow: 1.4px 1.4px #E1837E;
   }
-  body .buttons input {
+  body .buttons .button_search input {
     margin: 5px;
     height: 35px;
     font-size: 16px;
   }
-  body .buttons select {
+  body .buttons .button_search select {
     margin: 5px;
     height: 35px;
     font-size: 16px;
   }
-  body .display_list .display_list-title {
-    display: none;
+  body .display_list .list-title {
+    width: 300px;
+    height: 50px;
+  }
+  body .display_list .list-title h2 {
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+    text-shadow: 0.9px 0.9px #4C8787;
   }
   body .display_list .border {
     width: 300px;
   }
   body .display_list ul#countries {
-    margin: 60px auto 25px auto;
+    height: 270px;
+    margin: 0 auto;
   }
   body .display_list ul#countries li {
     font-size: 14px;
